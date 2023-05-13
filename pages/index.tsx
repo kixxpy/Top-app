@@ -1,5 +1,5 @@
 
-import { Button, Htag, Tag } from '@/components';
+import { Button, Htag, Rating, Tag } from '@/components';
 import { P } from '@/components/P/P';
 import Head from 'next/head';
 
@@ -26,6 +26,7 @@ export default function Home() {
         <Tag color='red'>hh.ru</Tag>
         <Tag color='primary'>hh.ru</Tag>
         <Tag color='grey'>hh.ru</Tag>
+        <Rating rating={4}></Rating>
       </>
     </>
   );
