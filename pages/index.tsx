@@ -1,10 +1,11 @@
 
 import { Button, Htag, Rating, Tag } from '@/components';
 import { P } from '@/components/P/P';
+import { withLayout } from '@/layout/Layout'
 import Head from 'next/head';
 import { useState } from 'react';
 
-export default function Home() {
+function Home() {
 
   const [rating, setRating] = useState<number>(4);
 
@@ -24,9 +25,9 @@ export default function Home() {
         <Htag tag='h1'>Текс</Htag>
         <Button appearance='primary' arrow='down'>Кнопка</Button>
         <Button appearance='ghost' arrow='right'>Кнопка</Button>
-        <P size='m'>Студенты освоят не только hard skills, необходимые для работы веб-дизайнером, но и soft skills — навыки, которые позволят эффективно взаимодействовать в команде с менеджерами, разработчиками и маркетологами. Выпускники факультета могут успешно конкурировать с веб-дизайнерами уровня middle.</P>
-        <P size='l'>Студенты освоят не только hard skills, необходимые для работы веб-дизайнером, но и soft skills — навыки, которые позволят эффективно взаимодействовать в команде с менеджерами, разработчиками и маркетологами. Выпускники факультета могут успешно конкурировать с веб-дизайнерами уровня middle.</P>
-        <P size='s'>Студенты освоят не только hard skills, необходимые для работы веб-дизайнером, но и soft skills — навыки, которые позволят эффективно взаимодействовать в команде с менеджерами, разработчиками и маркетологами. Выпускники факультета могут успешно конкурировать с веб-дизайнерами уровня middle.</P>
+        <P size='m'>Студенты освоят не только hard skills</P>
+        <P size='l'>Студенты освоят не только hard skills</P>
+        <P size='s'>Студенты освоят не только hard skills</P>
         <Tag color='red'>hh.ru</Tag>
         <Tag color='primary'>hh.ru</Tag>
         <Tag color='grey'>hh.ru</Tag>
@@ -35,3 +36,5 @@ export default function Home() {
     </>
   );
 }
+
+export default withLayout(Home);
