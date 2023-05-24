@@ -16,7 +16,7 @@ body {
 
 body {
   color: var(--black);
-  background: #FFF;
+  background: var(--background);
 }
 
 a {

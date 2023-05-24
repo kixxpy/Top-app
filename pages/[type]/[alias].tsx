@@ -7,17 +7,18 @@ import { TopLevelCategory, TopPageModel } from '@/interfaces/page.interface';
 import { ParsedUrlQuery } from 'querystring';
 import { ProductModel } from '@/interfaces/product.interface';
 import { firstLevelMenu } from '@/helpers/helpers';
+import { TopPageComponents } from '@/page-components';
 
-function Course( { menu, page, products }: CourseProps ) {
+function TopPage( { firstCategory, page, products }: TopPageProps ) {
 
-  return (
-	<>
-		{products && products.length}
-	</>
-  );
+  return <TopPageComponents 
+	firstCategory={firstCategory} 
+	page={page} 
+	products={products}
+  />;
 }
 
-export default withLayout(Course);
+export default withLayout(TopPage);
 
 export const getStaticPaths: GetStaticPaths = async () => {
 	let paths: string[] = [];
@@ -47,7 +48,7 @@ export async function getStaticProps({ params }: GetStaticPropsContext<ParsedUrl
 	}
 
 	try {
-		const { data: menu } = await axios.post<CourseProps[]>(process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find', {
+		const { data: menu } = await axios.post<TopPageProps[]>(process.env.NEXT_PUBLIC_DOMAIN + '/api/top-page/find', {
 			firstCategory: firsCategoryItem.id
 		});
 		if (menu.length == 0) {
@@ -75,7 +76,7 @@ export async function getStaticProps({ params }: GetStaticPropsContext<ParsedUrl
 	}
 }
 
-interface CourseProps extends Record<string, unknown> {
+interface TopPageProps extends Record<string, unknown> {
   menu: MenuItem[],
   firstCategory: TopLevelCategory,
   page: TopPageModel,
