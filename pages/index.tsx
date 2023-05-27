@@ -1,5 +1,5 @@
 
-import { Button, Htag, Rating, Tag } from '@/components';
+import { Button, Htag, Input, Rating, Tag, Textarea } from '@/components';
 import { P } from '@/components/P/P';
 import { withLayout } from '@/layout/Layout';
 import { GetStaticProps } from 'next';
@@ -35,6 +35,8 @@ function Home( { menu }: HomeProps ) {
         <Tag color='primary'>hh.ru</Tag>
         <Tag color='grey'>hh.ru</Tag>
         <Rating rating={rating} isEditable setRating={setRating}></Rating>
+        <Input placeholder='Имя'/>
+        <Textarea />
       </>
     </>
   );

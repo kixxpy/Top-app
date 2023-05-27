@@ -3,6 +3,7 @@
 	font-size: 14px;
 	line-height: 24px;
 	margin: 0;
+	text-align:justify;
 }
 
 .m {
@@ -10,6 +11,7 @@
 	font-size: 16px;
 	line-height: 24px;
 	margin: 0;
+	text-align:justify;
 }
 
 .l {
@@ -17,4 +19,5 @@
 	font-size: 18px;
 	line-height: 29px;
 	margin: 0;
+	text-align:justify;
 }

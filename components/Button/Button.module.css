@@ -13,6 +13,7 @@
 .primary {
 	color: var(--white);
 	background-color: var(--primary);
+	border: none;
 }
 
 .primary:hover {
